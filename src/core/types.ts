@@ -20,8 +20,10 @@ export interface GeoPoint {
   cmt?: string;
   desc?: string;
   sym?: string;
-  /** Raw extension key/values (heart rate, cadence, power, hdop, speed, ...). */
+  /** Standard scalar extras as direct children (hdop, vdop, sat, speed, ...). */
   ext?: Record<string, string>;
+  /** Verbatim inner XML of the <extensions> block (HR, cadence, power, ...). */
+  extRaw?: string;
 }
 
 /** A contiguous run of track points. */
