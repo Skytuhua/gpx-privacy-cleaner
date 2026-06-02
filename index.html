@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Strict CSP: the app may only load its own assets. There is deliberately no
+      connect-src, so the page physically cannot make network requests. This is the
+      core privacy guarantee — your GPS files never leave the browser.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"
+    />
+    <meta
+      name="description"
+      content="Privacy-first, 100% in-browser tool that strips your home location and personal metadata out of GPX (GPS track) files before you share them. Nothing is ever uploaded."
+    />
+    <meta name="color-scheme" content="dark" />
+    <title>GPX Privacy Cleaner — strip your home location from GPS tracks</title>
+    <script type="module" crossorigin src="/gpx-privacy-cleaner/assets/index-BhPTJYsx.js"></script>
+    <link rel="stylesheet" crossorigin href="/gpx-privacy-cleaner/assets/index-CQBEiuqc.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
