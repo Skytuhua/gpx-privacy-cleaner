@@ -35,6 +35,8 @@ const PATHS: Record<string, string> = {
   file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/>',
   'wifi-off':
     '<path d="m2 2 20 20M8.5 16.5a5 5 0 0 1 7 0M5 12.9a10 10 0 0 1 3.3-2.2M2 8.8a15 15 0 0 1 4.2-2.6M16.7 10.7A10 10 0 0 1 19 12.9M9 4.2a15 15 0 0 1 12 2.6M12 20h.01"/>',
+  'help-circle':
+    '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
 };
 
 export function icon(name: keyof typeof PATHS | string, cls = 'size-4'): string {

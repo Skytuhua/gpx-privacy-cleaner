@@ -21,6 +21,15 @@ export class Dropzone {
       <div class="text-center space-y-3 mb-8">
         <h2 class="text-2xl sm:text-3xl font-bold text-fg">Strip your home location from a GPS track</h2>
         <p class="text-fg-muted max-w-xl mx-auto">Drop a <code class="font-mono text-fg">.gpx</code> file from Strava, Garmin, Komoot or your phone. Everything happens in your browser — your route never leaves this page.</p>
+        <details class="max-w-xl mx-auto text-sm text-fg-muted">
+          <summary class="cursor-pointer text-accent hover:underline underline-offset-2 inline-flex items-center gap-1.5">${icon('help-circle', 'size-4')} Where do I get my .gpx file?</summary>
+          <ul class="mt-2 text-left space-y-1 leading-relaxed">
+            <li><span class="text-fg">Strava:</span> open the activity → <span class="text-fg">⋯</span> menu → <span class="text-fg">Export GPX</span>.</li>
+            <li><span class="text-fg">Garmin Connect:</span> open the activity → gear icon → <span class="text-fg">Export to GPX</span>.</li>
+            <li><span class="text-fg">Komoot:</span> open the tour → <span class="text-fg">⋯</span> → <span class="text-fg">Export GPX</span>.</li>
+            <li><span class="text-fg">Phone apps:</span> look for a Share or Export option and choose <span class="text-fg">GPX</span>.</li>
+          </ul>
+        </details>
       </div>
 
       <div data-ref="drop" tabindex="0" role="button" aria-label="Drop a GPX file or click to choose one"
@@ -34,10 +43,10 @@ export class Dropzone {
 
       <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
         <button data-ref="sample" class="btn-ghost text-sm">${icon('route', 'size-4')} Try it with a sample track</button>
-        <button data-ref="paste-toggle" class="btn-ghost text-sm">${icon('copy', 'size-4')} Paste GPX text</button>
+        <button data-ref="paste-toggle" aria-expanded="false" aria-controls="paste-box" class="btn-ghost text-sm">${icon('copy', 'size-4')} Paste GPX text</button>
       </div>
 
-      <div data-ref="paste-box" class="mt-4 hidden">
+      <div data-ref="paste-box" id="paste-box" class="mt-4 hidden">
         <textarea data-ref="paste-area" rows="6" placeholder="Paste the contents of a .gpx file here…"
           class="input font-mono text-xs w-full" aria-label="Paste GPX text"></textarea>
         <div class="mt-2 text-right">
@@ -97,8 +106,9 @@ export class Dropzone {
 
     this.ref('sample').addEventListener('click', () => this.cb.onSample());
     this.ref('paste-toggle').addEventListener('click', () => {
-      this.ref('paste-box').classList.toggle('hidden');
-      this.ref('paste-area').focus();
+      const hidden = this.ref('paste-box').classList.toggle('hidden');
+      this.ref('paste-toggle').setAttribute('aria-expanded', String(!hidden));
+      if (!hidden) this.ref('paste-area').focus();
     });
     this.ref('paste-load').addEventListener('click', () => {
       const text = this.ref<HTMLTextAreaElement>('paste-area').value;
