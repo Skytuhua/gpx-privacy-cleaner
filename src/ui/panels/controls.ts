@@ -78,6 +78,7 @@ export class ControlsPanel {
              <label class="flex items-center gap-2 cursor-pointer rounded-control border border-border-soft px-2.5 py-2"><input type="radio" name="zone-mode" data-ref="mode-crop" value="crop-ends" class="accent-accent" /> Crop ends</label>
              <label class="flex items-center gap-2 cursor-pointer rounded-control border border-border-soft px-2.5 py-2"><input type="radio" name="zone-mode" data-ref="mode-cut" value="cut-all" class="accent-accent" /> Cut all</label>
            </div>
+           <p class="text-xs text-fg-muted"><span class="text-fg">Crop ends</span> trims only the start &amp; finish near home — best for most people. <span class="text-fg">Cut all</span> removes every point inside the zone, anywhere on the route.</p>
            <p data-ref="zone-count" class="data text-xs"></p>
          </div>`,
       ),
@@ -271,12 +272,14 @@ export class ControlsPanel {
       this.ref<HTMLInputElement>('mode-cut').checked = c.privacyMode === 'cut-all';
       const removed = d.transform.report.privacyZonePointsRemoved;
       const countEl = this.ref('zone-count');
-      countEl.textContent = `${fmtInt(removed)} point(s) inside the zone will be removed.`;
+      countEl.textContent = `${fmtInt(removed)} ${removed === 1 ? 'point' : 'points'} inside the zone will be removed.`;
       countEl.className = `data text-xs ${removed > 0 ? 'text-danger' : 'text-fg-muted'}`;
     }
     const pickLabel = this.ref('zone-pick-label');
     pickLabel.textContent = s.zonePickMode ? 'Click the map…' : 'Pick on map';
-    this.ref('zone-pick').classList.toggle('!border-accent', s.zonePickMode);
+    const pickBtn = this.ref('zone-pick');
+    pickBtn.classList.toggle('!border-accent', s.zonePickMode);
+    pickBtn.setAttribute('aria-pressed', String(s.zonePickMode));
 
     // Strip toggles + inventory badges
     this.ref<HTMLInputElement>('strip-time').checked = c.strip.time;
