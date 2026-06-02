@@ -10,3 +10,6 @@ e2e/screenshots/*.tmp.png
 *.log
 .env
 .env.*
+
+# build artifact staging
+gpx-privacy-cleaner-web/
