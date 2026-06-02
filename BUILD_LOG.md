@@ -51,6 +51,52 @@ A running, honest record of decisions, dead ends, fixes, and review findings.
   4px spacing scale, restrained effects, explicit anti-patterns + pre-delivery
   checklist. Summarized in my own words in `DESIGN_NOTES.md`. Gate 3.5 target met.
 
-## Phase 3 — Tooling
+## Phase 3 — Tooling (Gate 3 ✓)
 
-- (in progress) Vite + TS + Tailwind + Vitest + Playwright + ESLint/Prettier.
+- Vite + TS + Tailwind + Vitest(jsdom) + Playwright + ESLint/Prettier; pinned deps.
+- Cleared npm-audit advisories (postcss/vite patch + esbuild ^0.25 override + vitest 4).
+  One dev-server-only Vite `.map` advisory remains (fix = breaking Vite 8); it never
+  ships in the static bundle — accepted and documented.
+- Green baseline: build, tests, lint all pass.
+
+## Phase 4 — Build (Gate 4 ✓)
+
+- Pure core (parse/serialize/stats/simplify/privacy/merge/transform) + unit tests.
+- Vanilla-TS UI: store, local canvas renderer (no map tiles → zero network),
+  controls/report/dropzone panels, responsive shell. Self-hosted fonts; stopped
+  Vite inlining them so the strict `font-src 'self'` CSP holds.
+- Verified in Chromium: 0 non-same-origin requests, 0 console errors, responsive.
+
+## Phase 5 — Self-review & QA (Gate 5 ✓)
+
+- Ran parallel review sub-agents (security/code-quality + adversarial robustness)
+  plus own functional/visual/a11y passes. See `REVIEW.md`.
+- Robustness: 45 adversarial tests, 0 hard defects.
+- Fixed a real HIGH: a `fetch()` had been pulled into the bundle by Vite's
+  modulepreload polyfill (triggered by a needless dynamic import). Removed it, set
+  `modulePreload.polyfill=false`, and added `scripts/check-no-network.mjs` guard.
+- Fixed: GPX 1.1 child ordering; single-point home-detect; route cut-all gap;
+  defensive escaping; non-finite coord guard; a11y (axe 0 violations); tightened CSP
+  to `style-src 'self'`.
+- Final: 113 tests pass, lint clean, axe 0 violations, 0 non-same-origin requests.
+
+## Phase 6 — Docs & packaging (Gate 6 ✓)
+
+- README (plain first line matching repo name) + screenshots, CHANGELOG, REVIEW.
+- Built standalone relative-base web bundle, zipped to
+  `gpx-privacy-cleaner-v1.0.0-web.zip`; verified it runs from a clean extract
+  (workspace loads, sample parses, 0 non-app requests, 0 console errors).
+
+## Phase 7 — Ship (Gate 7 ✓)
+
+- Created public repo `Skytuhua/gpx-privacy-cleaner` (topics + homepage + description),
+  pushed full history to `main`.
+- Deployed the `/gpx-privacy-cleaner/`-based build to the `gh-pages` branch; enabled
+  GitHub Pages → https://skytuhua.github.io/gpx-privacy-cleaner/ (verified live: 200,
+  workspace loads, 0 off-origin requests, 0 console errors).
+- Cut release `v1.0.0` with notes + the web zip artifact; verified the asset
+  downloads and the zip is intact.
+
+Note on identity: all commits (this repo + gh-pages) authored as
+Skytuhua <Skytuhua@users.noreply.github.com>; signing disabled; no AI/co-author
+trailers anywhere.

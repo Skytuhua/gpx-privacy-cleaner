@@ -13,60 +13,60 @@ Living checklist, updated as the build proceeds.
 
 ## Phase 3 — tooling (Gate 3)
 
-- [ ] package.json + deps pinned
-- [ ] Vite + tsconfig + Tailwind + PostCSS
-- [ ] Vitest config + sample passing test
-- [ ] ESLint + Prettier
-- [ ] Playwright config
-- [ ] hello-world build/run/lint/test all green
+- [x] package.json + deps pinned
+- [x] Vite + tsconfig + Tailwind + PostCSS
+- [x] Vitest config + sample passing test
+- [x] ESLint + Prettier
+- [x] Playwright config
+- [x] hello-world build/run/lint/test all green
 
 ## Phase 4 — build core (pure, tested)
 
-- [ ] types.ts
-- [ ] geo.ts (haversine, bounds, projection) + tests
-- [ ] parse.ts (GPX 1.0/1.1, extensions, tolerant) + tests
-- [ ] serialize.ts (GPX/GeoJSON/CSV) + tests
-- [ ] stats.ts + tests
-- [ ] simplify.ts (Douglas–Peucker, meters) + tests
-- [ ] privacy.ts (home detect, zone crop, fuzz, strip) + tests
-- [ ] merge.ts + tests
-- [ ] transform.ts (declarative pipeline + report) + tests
+- [x] types.ts
+- [x] geo.ts (haversine, bounds, projection) + tests
+- [x] parse.ts (GPX 1.0/1.1, extensions, tolerant) + tests
+- [x] serialize.ts (GPX/GeoJSON/CSV) + tests
+- [x] stats.ts + tests
+- [x] simplify.ts (Douglas–Peucker, meters) + tests
+- [x] privacy.ts (home detect, zone crop, fuzz, strip) + tests
+- [x] merge.ts + tests
+- [x] transform.ts (declarative pipeline + report) + tests
 
 ## Phase 4 — build UI
 
-- [ ] state.ts (store + subscribe)
-- [ ] canvas.ts (projection, pan/zoom, draw track/zone/markers, removed overlay)
-- [ ] icons.ts (inline SVG)
-- [ ] dropzone panel (empty state, sample, paste)
-- [ ] controls panel (privacy zone, strip, fuzz, trim, simplify, merge)
-- [ ] stats panel
-- [ ] privacy report + export panel
-- [ ] app.ts wiring + responsive layout + a11y + offline badge
-- [ ] CSP meta, no-network guarantee
+- [x] state.ts (store + subscribe)
+- [x] canvas.ts (projection, pan/zoom, draw track/zone/markers, removed overlay)
+- [x] icons.ts (inline SVG)
+- [x] dropzone panel (empty state, sample, paste)
+- [x] controls panel (privacy zone, strip, fuzz, trim, simplify, merge)
+- [x] stats panel
+- [x] privacy report + export panel
+- [x] app.ts wiring + responsive layout + a11y + offline badge
+- [x] CSP meta, no-network guarantee
 
 ## Phase 5 — review (Gate 5)
 
-- [ ] Functional pass (Playwright, screenshots of every state)
-- [ ] Visual/UX pass graded vs MASTER + pre-delivery checklist
-- [ ] Edge-case/robustness pass (empty/malformed/huge/unicode/single-point)
-- [ ] Code-quality + security pass (no fetch, no innerHTML, CSP, deps)
-- [ ] a11y + perf pass
-- [ ] "would a user keep this" pass
-- [ ] `REVIEW.md` with evidence
+- [x] Functional pass (Playwright, screenshots of every state)
+- [x] Visual/UX pass graded vs MASTER + pre-delivery checklist
+- [x] Edge-case/robustness pass (empty/malformed/huge/unicode/single-point)
+- [x] Code-quality + security pass (no fetch, no innerHTML, CSP, deps)
+- [x] a11y + perf pass
+- [x] "would a user keep this" pass
+- [x] `REVIEW.md` with evidence
 
 ## Phase 6 — docs & packaging (Gate 6)
 
-- [ ] README with screenshots, install, usage, limitations
-- [ ] CHANGELOG.md
-- [ ] Build static bundle + zip artifact; verify from clean state
+- [x] README with screenshots, install, usage, limitations
+- [x] CHANGELOG.md
+- [x] Build static bundle + zip artifact; verify from clean state
 
 ## Phase 7 — ship (Gate 7)
 
-- [ ] Create public repo, push
-- [ ] Tagged release v1.0.0 with notes + artifacts
-- [ ] GitHub Pages deploy + link
-- [ ] Verify live
+- [x] Create public repo, push
+- [x] Tagged release v1.0.0 with notes + artifacts
+- [x] GitHub Pages deploy + link
+- [x] Verify live
 
 ## Phase 8 — final report
 
-- [ ] Summary with links + demo
+- [x] Summary with links + demo
