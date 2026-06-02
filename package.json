@@ -1,6 +1,6 @@
 {
   "name": "gpx-privacy-cleaner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Privacy-first, 100% in-browser tool that strips your home location and personal metadata out of GPX (GPS track) files before you share them. Nothing is ever uploaded.",
   "type": "module",
   "license": "MIT",

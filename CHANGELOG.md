@@ -4,6 +4,29 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-06-02
+
+Usability polish and accessibility fixes — no change to how cleaning works.
+
+### Added
+- **"Where do I get my .gpx file?" help** on the start screen, with plain-language
+  export steps for Strava, Garmin Connect, Komoot and phone apps — so first-time
+  users who have never exported a track know exactly what to do.
+- **Plain explanation of the two privacy-zone modes** ("Crop ends" vs "Cut all")
+  shown right under the choice, so you can pick the right one without reading the docs.
+- A **browser-tab icon (favicon)** and theme colour, so the tab is recognisable.
+
+### Fixed / Accessibility
+- Screen readers now announce the selected state of the **km/mi** toggle and the
+  **"Pick on map"** button (`aria-pressed`), and whether the **"Paste GPX text"**
+  panel is open (`aria-expanded`).
+- The icon-only **Add files** / **Reset** buttons now have accessible names on small
+  screens.
+- Text inputs show a clear **keyboard focus ring** again.
+- Friendlier wording: correct singular/plural in the privacy report and zone count
+  ("1 point" vs "3 points"), and the empty report now guides you to the cleaning
+  controls in a way that reads correctly on phones too.
+
 ## [1.0.0] — 2026-06-02
 
 First public release.
