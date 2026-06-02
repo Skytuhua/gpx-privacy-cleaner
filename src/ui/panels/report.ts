@@ -55,9 +55,9 @@ export class ReportPanel {
       <section class="card p-4 space-y-3">
         <header class="flex items-center justify-between">
           <div class="flex items-center gap-2 text-fg"><span class="text-accent">${icon('activity', 'size-4')}</span><h2 class="text-sm font-semibold">Statistics</h2></div>
-          <div class="inline-flex rounded-control border border-border-soft overflow-hidden text-xs">
-            <button data-ref="unit-metric" class="px-2 py-1">km</button>
-            <button data-ref="unit-imperial" class="px-2 py-1 border-l border-border-soft">mi</button>
+          <div role="group" aria-label="Distance units" class="inline-flex rounded-control border border-border-soft overflow-hidden text-xs">
+            <button data-ref="unit-metric" aria-label="Show distances in kilometres" class="px-2 py-1">km</button>
+            <button data-ref="unit-imperial" aria-label="Show distances in miles" class="px-2 py-1 border-l border-border-soft">mi</button>
           </div>
         </header>
         <div data-ref="stats-body"></div>
@@ -103,11 +103,13 @@ export class ReportPanel {
     const { report } = s.derived.transform;
     const units = s.units;
 
-    // unit toggle styling
-    this.ref('unit-metric').className =
-      `px-2 py-1 ${units === 'metric' ? 'bg-accent text-on-accent' : 'text-fg-muted'}`;
-    this.ref('unit-imperial').className =
-      `px-2 py-1 border-l border-border-soft ${units === 'imperial' ? 'bg-accent text-on-accent' : 'text-fg-muted'}`;
+    // unit toggle styling + pressed state
+    const metricBtn = this.ref('unit-metric');
+    const imperialBtn = this.ref('unit-imperial');
+    metricBtn.className = `px-2 py-1 ${units === 'metric' ? 'bg-accent text-on-accent' : 'text-fg-muted'}`;
+    imperialBtn.className = `px-2 py-1 border-l border-border-soft ${units === 'imperial' ? 'bg-accent text-on-accent' : 'text-fg-muted'}`;
+    metricBtn.setAttribute('aria-pressed', String(units === 'metric'));
+    imperialBtn.setAttribute('aria-pressed', String(units === 'imperial'));
 
     // ---- Privacy report ----
     const removedItems: Array<[boolean, string]> = [
@@ -126,8 +128,8 @@ export class ReportPanel {
     const anyClean = active.length > 0;
 
     const banner = anyClean
-      ? `<div class="flex items-center gap-2 rounded-control bg-accent/10 border border-accent/30 px-3 py-2 text-accent text-sm">${icon('shield-check', 'size-4')}<span>${active.length} privacy action(s) applied — ready to share.</span></div>`
-      : `<div class="flex items-center gap-2 rounded-control bg-surface-2 border border-border-soft px-3 py-2 text-fg-muted text-sm">${icon('shield', 'size-4')}<span>No personal data removed yet. Turn on the controls at left.</span></div>`;
+      ? `<div class="flex items-center gap-2 rounded-control bg-accent/10 border border-accent/30 px-3 py-2 text-accent text-sm">${icon('shield-check', 'size-4')}<span>${active.length} privacy ${active.length === 1 ? 'action' : 'actions'} applied — ready to share.</span></div>`
+      : `<div class="flex items-center gap-2 rounded-control bg-surface-2 border border-border-soft px-3 py-2 text-fg-muted text-sm">${icon('shield', 'size-4')}<span>No personal data removed yet. Use the cleaning controls to choose what to remove.</span></div>`;
 
     const checklist = active
       .map(
