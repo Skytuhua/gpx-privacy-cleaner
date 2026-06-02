@@ -111,8 +111,8 @@ export function mountApp(rootEl: HTMLElement): void {
   // Header actions
   ref('header-actions').innerHTML = `
     <input data-ref="hdr-file" type="file" accept=".gpx,application/gpx+xml" multiple class="hidden" />
-    <button data-ref="hdr-add" class="btn-ghost text-xs hidden">${icon('upload', 'size-3.5')} <span class="hidden sm:inline">Add files</span></button>
-    <button data-ref="hdr-reset" class="btn-ghost text-xs hidden">${icon('rotate-ccw', 'size-3.5')} <span class="hidden sm:inline">Reset</span></button>`;
+    <button data-ref="hdr-add" aria-label="Add files" class="btn-ghost text-xs hidden">${icon('upload', 'size-3.5')} <span class="hidden sm:inline">Add files</span></button>
+    <button data-ref="hdr-reset" aria-label="Reset" class="btn-ghost text-xs hidden">${icon('rotate-ccw', 'size-3.5')} <span class="hidden sm:inline">Reset</span></button>`;
   const hdrFile = ref<HTMLInputElement>('hdr-file');
   ref('hdr-add').addEventListener('click', () => hdrFile.click());
   hdrFile.addEventListener('change', () => {

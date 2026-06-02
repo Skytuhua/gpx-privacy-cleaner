@@ -82,7 +82,8 @@
   }
   .input {
     @apply rounded-control bg-bg border border-border px-2.5 py-1.5 text-sm text-fg font-mono
-      focus:border-accent outline-none w-full;
+      focus:border-accent outline-none w-full
+      focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-accent;
   }
 }
 
