@@ -14,7 +14,7 @@ function section(id: string, iconName: string, title: string, body: string): str
   return `<section class="card p-4 space-y-3" data-ref="sec-${id}">
     <header class="flex items-center gap-2 text-fg">
       <span class="text-accent">${icon(iconName, 'size-4')}</span>
-      <h3 class="text-sm font-semibold">${title}</h3>
+      <h2 class="text-sm font-semibold">${title}</h2>
     </header>
     ${body}
   </section>`;
@@ -136,7 +136,7 @@ export class ControlsPanel {
       ),
       // Merge
       `<section data-ref="sec-merge" class="card p-4 space-y-2 hidden">
-         <header class="flex items-center gap-2 text-fg"><span class="text-accent">${icon('merge', 'size-4')}</span><h3 class="text-sm font-semibold">Merge</h3></header>
+         <header class="flex items-center gap-2 text-fg"><span class="text-accent">${icon('merge', 'size-4')}</span><h2 class="text-sm font-semibold">Merge</h2></header>
          <p class="text-xs text-fg-muted">Combine all loaded tracks into one.</p>
          ${toggle('merge-on', 'Merge into one track')}
        </section>`,

@@ -34,18 +34,15 @@ interface Cluster {
 /** Endpoints to consider for home detection: first & last of every segment. */
 function collectEndpoints(doc: GpxDoc): GeoPoint[] {
   const eps: GeoPoint[] = [];
-  for (const trk of doc.tracks) {
-    for (const seg of trk.segments) {
-      if (seg.points.length === 0) continue;
-      eps.push(seg.points[0]!);
-      eps.push(seg.points[seg.points.length - 1]!);
-    }
-  }
-  for (const rte of doc.routes) {
-    if (rte.points.length === 0) continue;
-    eps.push(rte.points[0]!);
-    eps.push(rte.points[rte.points.length - 1]!);
-  }
+  // For each run push the start, and the end only when it is a distinct point.
+  // This keeps a lone-point segment from being mistaken for a clustered "home".
+  const pushEnds = (points: GeoPoint[]): void => {
+    if (points.length === 0) return;
+    eps.push(points[0]!);
+    if (points.length > 1) eps.push(points[points.length - 1]!);
+  };
+  for (const trk of doc.tracks) for (const seg of trk.segments) pushEnds(seg.points);
+  for (const rte of doc.routes) pushEnds(rte.points);
   return eps;
 }
 
@@ -161,18 +158,18 @@ export function applyPrivacyZone(
     .map((t) => ({ ...t, segments: processSegments(t.segments) }))
     .filter((t) => t.segments.length > 0);
 
-  const routes: Route[] = doc.routes
-    .map((r) => {
-      if (mode === 'crop-ends') {
-        const { kept, removed: rr } = cropEnds(r.points, zone);
-        removed += rr;
-        return { ...r, points: kept };
-      }
-      const { runs, removed: rr } = cutAll(r.points, zone);
+  const routes: Route[] = doc.routes.flatMap((r): Route[] => {
+    if (mode === 'crop-ends') {
+      const { kept, removed: rr } = cropEnds(r.points, zone);
       removed += rr;
-      return { ...r, points: runs.flat() };
-    })
-    .filter((r) => r.points.length > 0);
+      return kept.length > 0 ? [{ ...r, points: kept }] : [];
+    }
+    // cut-all: split into separate routes so the redacted centre isn't bridged
+    // by a straight line (mirrors how tracks split into segments).
+    const { runs, removed: rr } = cutAll(r.points, zone);
+    removed += rr;
+    return runs.map((run) => ({ ...r, points: run }));
+  });
 
   // Waypoints inside the zone are removed in both modes (a marker at home leaks too).
   const waypoints = doc.waypoints.filter((w) => {

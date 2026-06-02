@@ -16,6 +16,7 @@ function escXml(s: string): string {
 
 /** Trim coordinate noise but keep full precision unless the caller fuzzed it. */
 function fmtCoord(n: number): string {
+  if (!Number.isFinite(n)) return '0';
   // Avoid scientific notation; keep up to 7 decimals (≈1 cm) of meaningful data.
   return Number(n.toFixed(7)).toString();
 }
@@ -27,21 +28,40 @@ function pointHasExtensions(doc: GpxDoc): boolean {
   return doc.tracks.some((t) => t.segments.some((s) => s.points.some(check)));
 }
 
+// GPX 1.1 mandates a strict child order for waypoint/track/route points. Emit
+// scalar extras in their schema slots so the cleaned file validates.
+const EXT_BEFORE_NAME = ['magvar', 'geoidheight'];
+const EXT_AFTER_SYM = [
+  'type',
+  'fix',
+  'sat',
+  'hdop',
+  'vdop',
+  'pdop',
+  'ageofdgpsdata',
+  'dgpsid',
+  'speed',
+  'course',
+];
+
 function serializePointChildren(p: GeoPoint, indent: string, includeNames: boolean): string {
   const lines: string[] = [];
+  const ext = p.ext ?? {};
+  const pushExt = (tag: string): void => {
+    if (ext[tag] !== undefined) lines.push(`${indent}<${tag}>${escXml(ext[tag]!)}</${tag}>`);
+  };
+
   if (p.ele !== undefined) lines.push(`${indent}<ele>${p.ele}</ele>`);
   if (p.time) lines.push(`${indent}<time>${escXml(p.time)}</time>`);
+  for (const tag of EXT_BEFORE_NAME) pushExt(tag);
   if (includeNames) {
     if (p.name) lines.push(`${indent}<name>${escXml(p.name)}</name>`);
     if (p.cmt) lines.push(`${indent}<cmt>${escXml(p.cmt)}</cmt>`);
     if (p.desc) lines.push(`${indent}<desc>${escXml(p.desc)}</desc>`);
-    if (p.sym) lines.push(`${indent}<sym>${escXml(p.sym)}</sym>`);
   }
-  if (p.ext) {
-    for (const [tag, value] of Object.entries(p.ext)) {
-      lines.push(`${indent}<${tag}>${escXml(value)}</${tag}>`);
-    }
-  }
+  pushExt('src');
+  if (includeNames && p.sym) lines.push(`${indent}<sym>${escXml(p.sym)}</sym>`);
+  for (const tag of EXT_AFTER_SYM) pushExt(tag);
   if (p.extRaw) {
     lines.push(`${indent}<extensions>${p.extRaw}</extensions>`);
   }

@@ -15,8 +15,10 @@ import {
   fmtSpeed,
   fmtTime,
   pct,
+  escapeHtml,
 } from '../format';
 import { copyText, exportCsv, exportGeoJson, exportGpx } from '../download';
+import { toGpx } from '../../core/serialize';
 import type { Store } from '../state';
 
 export class ReportPanel {
@@ -32,7 +34,7 @@ export class ReportPanel {
       <section class="card p-4 space-y-3">
         <header class="flex items-center gap-2 text-fg">
           <span class="text-accent">${icon('shield-check', 'size-4')}</span>
-          <h3 class="text-sm font-semibold">Privacy report</h3>
+          <h2 class="text-sm font-semibold">Privacy report</h2>
         </header>
         <div data-ref="report-body" class="space-y-3"></div>
       </section>
@@ -40,7 +42,7 @@ export class ReportPanel {
       <section class="card p-4 space-y-3">
         <header class="flex items-center gap-2 text-fg">
           <span class="text-accent">${icon('download', 'size-4')}</span>
-          <h3 class="text-sm font-semibold">Export cleaned track</h3>
+          <h2 class="text-sm font-semibold">Export cleaned track</h2>
         </header>
         <div class="grid grid-cols-3 gap-2">
           <button data-ref="exp-gpx" class="btn-primary text-xs">${icon('download', 'size-3.5')} GPX</button>
@@ -52,7 +54,7 @@ export class ReportPanel {
 
       <section class="card p-4 space-y-3">
         <header class="flex items-center justify-between">
-          <div class="flex items-center gap-2 text-fg"><span class="text-accent">${icon('activity', 'size-4')}</span><h3 class="text-sm font-semibold">Statistics</h3></div>
+          <div class="flex items-center gap-2 text-fg"><span class="text-accent">${icon('activity', 'size-4')}</span><h2 class="text-sm font-semibold">Statistics</h2></div>
           <div class="inline-flex rounded-control border border-border-soft overflow-hidden text-xs">
             <button data-ref="unit-metric" class="px-2 py-1">km</button>
             <button data-ref="unit-imperial" class="px-2 py-1 border-l border-border-soft">mi</button>
@@ -75,7 +77,6 @@ export class ReportPanel {
     );
     this.ref('exp-csv').addEventListener('click', () => exportCsv(s.derived.transform.result));
     this.ref('exp-copy').addEventListener('click', async () => {
-      const { toGpx } = await import('../../core/serialize');
       const ok = await copyText(toGpx(s.derived.transform.result));
       const label = this.ref('copy-label');
       label.textContent = ok ? 'Copied!' : 'Copy failed';
@@ -88,10 +89,12 @@ export class ReportPanel {
     this.ref('unit-imperial').addEventListener('click', () => s.setUnits('imperial'));
   }
 
+  // Defensive: escape both fields so a future caller passing GPX-derived text
+  // can never introduce an injection here.
   private row(label: string, value: string, accent = false): string {
     return `<div class="flex items-baseline justify-between gap-3 py-1 border-b border-border-soft/60 last:border-0">
-      <span class="text-xs text-fg-muted">${label}</span>
-      <span class="data text-sm ${accent ? 'text-accent' : 'text-fg'}">${value}</span>
+      <span class="text-xs text-fg-muted">${escapeHtml(label)}</span>
+      <span class="data text-sm ${accent ? 'text-accent' : 'text-fg'}">${escapeHtml(value)}</span>
     </div>`;
   }
 

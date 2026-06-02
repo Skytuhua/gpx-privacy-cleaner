@@ -3,7 +3,7 @@
  * connects the store to the panels and the canvas.
  */
 import { icon } from './icons';
-import { fmtInt } from './format';
+import { fmtInt, escapeHtml } from './format';
 import { Store } from './state';
 import { loadFiles, loadSample, loadText } from './fileLoader';
 import { TrackCanvas } from './canvas';
@@ -17,10 +17,11 @@ export function mountApp(rootEl: HTMLElement): void {
   rootEl.innerHTML = `
     <div class="min-h-[100dvh] flex flex-col">
       <header class="sticky top-0 z-20 border-b border-border-soft bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+        <h1 class="sr-only">GPX Privacy Cleaner — remove your home location and personal data from GPS tracks, entirely in your browser</h1>
         <div class="mx-auto max-w-[1500px] px-4 h-14 flex items-center gap-3">
           <div class="flex items-center gap-2 text-fg">
             <span class="text-accent">${icon('shield-check', 'size-6')}</span>
-            <span class="font-semibold tracking-tight">GPX Privacy Cleaner</span>
+            <span class="font-semibold tracking-tight" aria-hidden="true">GPX Privacy Cleaner</span>
           </div>
           <span class="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs text-accent">
             ${icon('wifi-off', 'size-3.5')} Offline · nothing uploaded
@@ -29,20 +30,19 @@ export function mountApp(rootEl: HTMLElement): void {
         </div>
       </header>
 
-      <div data-ref="error" class="hidden border-b border-danger/30 bg-danger/10">
-        <div class="mx-auto max-w-[1500px] px-4 py-2.5 flex items-start gap-2 text-sm text-danger">
-          <span class="mt-0.5 shrink-0">${icon('alert-triangle', 'size-4')}</span>
-          <p data-ref="error-text" class="flex-1"></p>
-          <button data-ref="error-close" class="shrink-0 text-danger/80 hover:text-danger" aria-label="Dismiss">${icon('x', 'size-4')}</button>
-        </div>
-      </div>
-
       <main class="flex-1">
+        <div data-ref="error" role="alert" class="hidden border-b border-danger/30 bg-danger/10">
+          <div class="mx-auto max-w-[1500px] px-4 py-2.5 flex items-start gap-2 text-sm text-danger">
+            <span class="mt-0.5 shrink-0">${icon('alert-triangle', 'size-4')}</span>
+            <p data-ref="error-text" class="flex-1"></p>
+            <button data-ref="error-close" class="shrink-0 text-danger/80 hover:text-danger" aria-label="Dismiss">${icon('x', 'size-4')}</button>
+          </div>
+        </div>
         <div data-ref="empty"></div>
         <div data-ref="workspace" class="hidden mx-auto max-w-[1500px] px-4 py-4">
           <div data-ref="chips" class="mb-3 flex flex-wrap items-center gap-2"></div>
           <div class="grid gap-4 grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)_360px] lg:h-[calc(100dvh-128px)]">
-            <aside class="order-2 lg:order-1 lg:overflow-y-auto lg:h-full pr-0.5" data-ref="controls-host"></aside>
+            <aside aria-label="Cleaning controls" class="order-2 lg:order-1 lg:overflow-y-auto lg:h-full pr-0.5" data-ref="controls-host"></aside>
             <section class="order-1 lg:order-2 relative h-[52vh] lg:h-full rounded-card border border-border-soft bg-surface overflow-hidden" data-ref="canvas-host">
               <div class="absolute right-3 top-3 z-10 flex flex-col gap-1.5">
                 <button data-ref="zoom-in" class="btn-ghost size-9 !p-0" aria-label="Zoom in">${icon('zoom-in', 'size-4')}</button>
@@ -51,7 +51,7 @@ export function mountApp(rootEl: HTMLElement): void {
               </div>
               <div data-ref="legend" class="absolute left-3 top-3 z-10 rounded-control bg-bg/80 border border-border-soft px-2.5 py-2 text-[11px] space-y-1 backdrop-blur"></div>
             </section>
-            <aside class="order-3 lg:overflow-y-auto lg:h-full pr-0.5" data-ref="report-host"></aside>
+            <aside aria-label="Privacy report and export" class="order-3 lg:overflow-y-auto lg:h-full pr-0.5" data-ref="report-host"></aside>
           </div>
         </div>
       </main>
@@ -137,9 +137,9 @@ export function mountApp(rootEl: HTMLElement): void {
 
   // ---- Render on state changes ----
   const legendHtml = `
-    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block h-0.5 w-4" style="background:#38bdf8"></span> cleaned track</div>
-    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block h-0.5 w-4" style="background:rgba(148,163,184,0.6)"></span> original</div>
-    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block size-2 rounded-full" style="background:#22c55e"></span> start <span class="inline-block size-2 rounded-full ml-1" style="background:#f43f5e"></span> end</div>`;
+    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block h-0.5 w-4 bg-track"></span> cleaned track</div>
+    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block h-0.5 w-4 bg-fg-muted"></span> original</div>
+    <div class="flex items-center gap-1.5 text-fg-muted"><span class="inline-block size-2 rounded-full bg-accent"></span> start <span class="inline-block size-2 rounded-full ml-1 bg-danger"></span> end</div>`;
 
   function render(): void {
     const inWorkspace = store.files.length > 0;
@@ -190,11 +190,4 @@ export function mountApp(rootEl: HTMLElement): void {
 
   store.subscribe(render);
   render();
-}
-
-function escapeHtml(s: string): string {
-  return s.replace(
-    /[&<>"']/g,
-    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!,
-  );
 }

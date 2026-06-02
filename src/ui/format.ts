@@ -79,3 +79,11 @@ export function pct(before: number, after: number): string {
   if (before === 0) return '0%';
   return `${Math.round((1 - after / before) * 100)}%`;
 }
+
+/** Escape a string for safe interpolation into innerHTML. */
+export function escapeHtml(s: string): string {
+  return s.replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!,
+  );
+}

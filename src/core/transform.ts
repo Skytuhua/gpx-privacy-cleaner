@@ -23,7 +23,12 @@ function trackPointCount(doc: GpxDoc): number {
 
 /** Keep only track points whose global index falls within [start, end]. */
 function trimDoc(doc: GpxDoc, range: { start: number; end: number }): GpxDoc {
-  const { start, end } = range;
+  // Indices are matched directly against a running global counter, so any
+  // out-of-range, inverted (start > end), or non-finite bound simply selects the
+  // valid intersection (often empty) — it can never throw, regardless of how
+  // earlier pipeline stages reshaped the track.
+  const start = Number.isFinite(range.start) ? range.start : 0;
+  const end = Number.isFinite(range.end) ? range.end : Infinity;
   let idx = 0;
   const tracks = doc.tracks
     .map((t) => {
