@@ -1,0 +1,99 @@
+/* Self-hosted fonts (no runtime Google Fonts fetch — honors the zero-network rule). */
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Design tokens (single source of color truth; see design-system/MASTER.md) ---- */
+:root {
+  --color-bg: #0f172a;
+  --color-surface: #1b2336;
+  --color-surface-2: #222c42;
+  --color-primary: #1e293b;
+  --color-fg: #f8fafc;
+  --color-fg-muted: #94a3b8;
+  --color-border: #334155;
+  --color-border-soft: rgba(148, 163, 184, 0.18);
+  --color-accent: #22c55e;
+  --color-on-accent: #04130a;
+  --color-warn: #f59e0b;
+  --color-danger: #f43f5e;
+  --color-track: #38bdf8;
+  --color-ring: #22c55e;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+  /* tabular numerics everywhere mono is used */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+  /* always-visible keyboard focus */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: rgba(34, 197, 94, 0.3);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-control px-3 py-2 text-sm font-medium
+      transition-[background-color,box-shadow,transform] duration-150 cursor-pointer select-none
+      disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-accent text-on-accent hover:brightness-110;
+    box-shadow:
+      0 0 0 1px var(--color-accent),
+      0 0 18px -6px var(--color-accent);
+  }
+  .btn-ghost {
+    @apply btn bg-surface-2 text-fg hover:bg-primary border border-border-soft;
+  }
+  .btn-danger {
+    @apply btn bg-transparent text-danger border border-danger/40 hover:bg-danger/10;
+  }
+  .card {
+    @apply bg-surface rounded-card border border-border-soft;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wide text-fg-muted;
+  }
+  .data {
+    @apply font-mono tabular-nums;
+  }
+  .input {
+    @apply rounded-control bg-bg border border-border px-2.5 py-1.5 text-sm text-fg font-mono
+      focus:border-accent outline-none w-full;
+  }
+}
+
+/* Reduced motion: disable all non-essential animation/transition. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

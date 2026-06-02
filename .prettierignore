@@ -1,0 +1,6 @@
+dist
+node_modules
+design-system
+*.gpx
+e2e/screenshots
+assets
