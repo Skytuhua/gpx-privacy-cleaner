@@ -66,8 +66,26 @@ describe('computeStats', () => {
     const doc: GpxDoc = {
       metadata: {},
       tracks: [
-        { segments: [{ points: [{ lat: 0, lon: 0 }, { lat: 0, lon: 0.01 }] }] },
-        { segments: [{ points: [{ lat: 1, lon: 1 }, { lat: 1, lon: 1.01 }] }] },
+        {
+          segments: [
+            {
+              points: [
+                { lat: 0, lon: 0 },
+                { lat: 0, lon: 0.01 },
+              ],
+            },
+          ],
+        },
+        {
+          segments: [
+            {
+              points: [
+                { lat: 1, lon: 1 },
+                { lat: 1, lon: 1.01 },
+              ],
+            },
+          ],
+        },
       ],
       routes: [],
       waypoints: [],

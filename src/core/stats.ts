@@ -117,9 +117,7 @@ export function statsForSegments(segments: Segment[]): TrackStats {
       maxSpeedMps = run.maxSpeedMps;
     }
 
-    const segEles = seg.points
-      .map((p) => p.ele)
-      .filter((e): e is number => e !== undefined);
+    const segEles = seg.points.map((p) => p.ele).filter((e): e is number => e !== undefined);
     const gl = elevationGainLoss(segEles);
     gain += gl.gain;
     loss += gl.loss;
@@ -131,7 +129,10 @@ export function statsForSegments(segments: Segment[]): TrackStats {
 
     const firstWithTime = seg.points.find((p) => p.time)?.time ?? null;
     const lastWithTime = [...seg.points].reverse().find((p) => p.time)?.time ?? null;
-    if (firstWithTime && (startTime === null || Date.parse(firstWithTime) < Date.parse(startTime))) {
+    if (
+      firstWithTime &&
+      (startTime === null || Date.parse(firstWithTime) < Date.parse(startTime))
+    ) {
       startTime = firstWithTime;
     }
     if (lastWithTime && (endTime === null || Date.parse(lastWithTime) > Date.parse(endTime))) {
@@ -144,8 +145,7 @@ export function statsForSegments(segments: Segment[]): TrackStats {
     durationS = Math.max(0, (Date.parse(endTime) - Date.parse(startTime)) / 1000);
   }
   const movingTime = anyTime ? movingTimeS : null;
-  const avgSpeedMps =
-    durationS && durationS > 0 ? distanceM / durationS : null;
+  const avgSpeedMps = durationS && durationS > 0 ? distanceM / durationS : null;
 
   return {
     pointCount,

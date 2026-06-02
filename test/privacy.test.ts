@@ -124,7 +124,13 @@ describe('stripMetadata', () => {
     expect(out.tracks[0]!.name).toBeUndefined();
   });
   it('does not mutate the original', () => {
-    stripMetadata(doc, { time: true, extensions: true, elevation: true, names: true, creator: true });
+    stripMetadata(doc, {
+      time: true,
+      extensions: true,
+      elevation: true,
+      names: true,
+      creator: true,
+    });
     expect(doc.tracks[0]!.segments[0]!.points[0]!.time).toBe('2024-01-01T08:00:00Z');
     expect(doc.metadata.creator).toBe('device-x');
   });

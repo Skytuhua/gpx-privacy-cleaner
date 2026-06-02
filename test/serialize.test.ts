@@ -60,7 +60,9 @@ describe('toGeoJson', () => {
     expect(types).toContain('Point');
   });
   it('uses [lon, lat, ele] ordering', () => {
-    const line = gj.features.find((f: { geometry: { type: string } }) => f.geometry.type === 'LineString');
+    const line = gj.features.find(
+      (f: { geometry: { type: string } }) => f.geometry.type === 'LineString',
+    );
     expect(line.geometry.coordinates[0][0]).toBeCloseTo(-73.7654321, 4); // lon first
     expect(line.geometry.coordinates[0][2]).toBe(12.5); // ele third
   });

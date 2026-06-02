@@ -10,9 +10,9 @@ export default defineConfig({
     target: 'es2022',
     outDir: 'dist',
     sourcemap: false,
-    // Inline nothing remotely; keep everything self-contained for the
-    // zero-network privacy guarantee.
-    assetsInlineLimit: 4096,
+    // Never inline fonts as data: URIs — they would violate the strict
+    // `font-src 'self'` CSP. Fonts must be served as same-origin asset files.
+    assetsInlineLimit: (filePath: string) => !/\.(woff2?|ttf|otf|eot)$/i.test(filePath),
   },
   server: {
     port: 5173,
