@@ -1,0 +1,307 @@
+{
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\.prettierrc.json": {
+    "mtime": 1780425006.1664307,
+    "ast_hash": "84a07d12d89ada8f10ab677598f57190",
+    "semantic_hash": "84a07d12d89ada8f10ab677598f57190"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\package.json": {
+    "mtime": 1780425006.1909988,
+    "ast_hash": "04319598573eedefa5c81bc776e4c8a2",
+    "semantic_hash": "04319598573eedefa5c81bc776e4c8a2"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\playwright.config.ts": {
+    "mtime": 1780425006.1919959,
+    "ast_hash": "d960143c6d0d79ef6a46693c38361eec",
+    "semantic_hash": "d960143c6d0d79ef6a46693c38361eec"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\postcss.config.js": {
+    "mtime": 1780425006.1919959,
+    "ast_hash": "33fad9c02cb0ec6d6030369ef6347d57",
+    "semantic_hash": "33fad9c02cb0ec6d6030369ef6347d57"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\scripts\\check-no-network.mjs": {
+    "mtime": 1780425006.218018,
+    "ast_hash": "0303ff5b228454536c9bbdb8da14e2d8",
+    "semantic_hash": "0303ff5b228454536c9bbdb8da14e2d8"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\geo.ts": {
+    "mtime": 1780425006.2200682,
+    "ast_hash": "e22d1748e999a88513928c9811e34178",
+    "semantic_hash": "e22d1748e999a88513928c9811e34178"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\merge.ts": {
+    "mtime": 1780425006.2210622,
+    "ast_hash": "d9ea4c2925474ef662e8cd2064607902",
+    "semantic_hash": "d9ea4c2925474ef662e8cd2064607902"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\parse.ts": {
+    "mtime": 1780425006.2210622,
+    "ast_hash": "6227cabf4c5c00552c044c3324e29fea",
+    "semantic_hash": "6227cabf4c5c00552c044c3324e29fea"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\privacy.ts": {
+    "mtime": 1780425006.2210622,
+    "ast_hash": "3b88f5125c5f415dec464ec9c451648c",
+    "semantic_hash": "3b88f5125c5f415dec464ec9c451648c"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\serialize.ts": {
+    "mtime": 1780425006.222062,
+    "ast_hash": "1db24657fb69d8e5434f763e0af24536",
+    "semantic_hash": "1db24657fb69d8e5434f763e0af24536"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\simplify.ts": {
+    "mtime": 1780425006.222062,
+    "ast_hash": "e0b6a2e9351dcb7c8e24a5688b03e590",
+    "semantic_hash": "e0b6a2e9351dcb7c8e24a5688b03e590"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\stats.ts": {
+    "mtime": 1780425006.222062,
+    "ast_hash": "5d2e4ab187f3bff3b24f458d9bd08f30",
+    "semantic_hash": "5d2e4ab187f3bff3b24f458d9bd08f30"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\transform.ts": {
+    "mtime": 1780425006.2230647,
+    "ast_hash": "5d9f4834946a62c4d2c452829b33670a",
+    "semantic_hash": "5d9f4834946a62c4d2c452829b33670a"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\core\\types.ts": {
+    "mtime": 1780425006.2240627,
+    "ast_hash": "1922af3fc375631a27fe4d4be2a4c3ff",
+    "semantic_hash": "1922af3fc375631a27fe4d4be2a4c3ff"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\main.ts": {
+    "mtime": 1780425006.2250638,
+    "ast_hash": "7eb4eb26bf5fbf80623810336fd8603f",
+    "semantic_hash": "7eb4eb26bf5fbf80623810336fd8603f"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\app.ts": {
+    "mtime": 1780425006.2260633,
+    "ast_hash": "cd56b46dc1140511eff112cef9110d70",
+    "semantic_hash": "cd56b46dc1140511eff112cef9110d70"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\canvas.ts": {
+    "mtime": 1780425006.2260633,
+    "ast_hash": "17a7adf7be208d10aa351b4ee84d3e9c",
+    "semantic_hash": "17a7adf7be208d10aa351b4ee84d3e9c"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\download.ts": {
+    "mtime": 1780425006.2260633,
+    "ast_hash": "ffb5a4ea8c022fc21acb5b1982164540",
+    "semantic_hash": "ffb5a4ea8c022fc21acb5b1982164540"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\fileLoader.ts": {
+    "mtime": 1780425006.2270632,
+    "ast_hash": "535b8a626845c0d1e5b02deab6232adf",
+    "semantic_hash": "535b8a626845c0d1e5b02deab6232adf"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\format.ts": {
+    "mtime": 1780425006.2270632,
+    "ast_hash": "629c0fc90848cd8334855416b82ef7f2",
+    "semantic_hash": "629c0fc90848cd8334855416b82ef7f2"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\icons.ts": {
+    "mtime": 1780425006.2270632,
+    "ast_hash": "1af4d2b458277d835b91bc8c1d5fc731",
+    "semantic_hash": "1af4d2b458277d835b91bc8c1d5fc731"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\controls.ts": {
+    "mtime": 1780425006.2285678,
+    "ast_hash": "51e5aa6067bfbd62d0808c9a9b90f8c8",
+    "semantic_hash": "51e5aa6067bfbd62d0808c9a9b90f8c8"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\dropzone.ts": {
+    "mtime": 1780425006.2285678,
+    "ast_hash": "275b9de26c36dfd16bbf207288c579f2",
+    "semantic_hash": "275b9de26c36dfd16bbf207288c579f2"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\report.ts": {
+    "mtime": 1780425006.229573,
+    "ast_hash": "5b134a38f96b831a2b4b9b6fd771821d",
+    "semantic_hash": "5b134a38f96b831a2b4b9b6fd771821d"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\state.ts": {
+    "mtime": 1780425006.229573,
+    "ast_hash": "e078d04e333e9d30143dea66484d1e9e",
+    "semantic_hash": "e078d04e333e9d30143dea66484d1e9e"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\vite-env.d.ts": {
+    "mtime": 1780425006.229573,
+    "ast_hash": "4ec464b6fe605f3dcc6f63985c848469",
+    "semantic_hash": "4ec464b6fe605f3dcc6f63985c848469"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\tailwind.config.js": {
+    "mtime": 1780425006.229573,
+    "ast_hash": "8942b65478d9c9d47b4eb7eeb1fed7eb",
+    "semantic_hash": "8942b65478d9c9d47b4eb7eeb1fed7eb"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\edge.test.ts": {
+    "mtime": 1780425006.2315743,
+    "ast_hash": "3fa70c273c7d12b10371ebec4e1a569e",
+    "semantic_hash": "3fa70c273c7d12b10371ebec4e1a569e"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\geo.test.ts": {
+    "mtime": 1780425006.2315743,
+    "ast_hash": "ef0aeef02621531e50e5978c86e3cb3f",
+    "semantic_hash": "ef0aeef02621531e50e5978c86e3cb3f"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\parse.test.ts": {
+    "mtime": 1780425006.2325742,
+    "ast_hash": "be349e0d78ca49dd5cb73e35d4810542",
+    "semantic_hash": "be349e0d78ca49dd5cb73e35d4810542"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\privacy.test.ts": {
+    "mtime": 1780425006.233576,
+    "ast_hash": "fc047c8a437427f4941cf5c3808a204e",
+    "semantic_hash": "fc047c8a437427f4941cf5c3808a204e"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\serialize.test.ts": {
+    "mtime": 1780425006.233576,
+    "ast_hash": "9e836bc4ce4dea4125d90756cac52446",
+    "semantic_hash": "9e836bc4ce4dea4125d90756cac52446"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\simplify.test.ts": {
+    "mtime": 1780425006.233576,
+    "ast_hash": "d1dca67a4dedab67cf27cde6c0305f6a",
+    "semantic_hash": "d1dca67a4dedab67cf27cde6c0305f6a"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\stats.test.ts": {
+    "mtime": 1780425006.233576,
+    "ast_hash": "2c3744aef2474c8ca0bae559b6c8c20b",
+    "semantic_hash": "2c3744aef2474c8ca0bae559b6c8c20b"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\test\\transform.test.ts": {
+    "mtime": 1780425006.2345734,
+    "ast_hash": "55a939310e9cd65219ff16f7f17e76ef",
+    "semantic_hash": "55a939310e9cd65219ff16f7f17e76ef"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\tsconfig.json": {
+    "mtime": 1780425006.2345734,
+    "ast_hash": "ee7d08474b2fd7ea272dd95e7d585e47",
+    "semantic_hash": "ee7d08474b2fd7ea272dd95e7d585e47"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\vite.config.ts": {
+    "mtime": 1780425006.235574,
+    "ast_hash": "a3e73205a65c77a167a5870fbccb3718",
+    "semantic_hash": "a3e73205a65c77a167a5870fbccb3718"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\vitest.config.ts": {
+    "mtime": 1780425006.235574,
+    "ast_hash": "6597de728be59f10450656de30a77403",
+    "semantic_hash": "6597de728be59f10450656de30a77403"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\ARCHITECTURE.md": {
+    "mtime": 1780425006.1664307,
+    "ast_hash": "c5aeff3876c03515cbbe552ed47fa883",
+    "semantic_hash": "c5aeff3876c03515cbbe552ed47fa883"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\BUILD_LOG.md": {
+    "mtime": 1780425006.1664307,
+    "ast_hash": "05f74034040b852b0f8b806cb0fbb86d",
+    "semantic_hash": "05f74034040b852b0f8b806cb0fbb86d"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\CHANGELOG.md": {
+    "mtime": 1780425006.1664307,
+    "ast_hash": "d9331208c58587d07bde77ffe15adbdd",
+    "semantic_hash": "d9331208c58587d07bde77ffe15adbdd"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\DESIGN_NOTES.md": {
+    "mtime": 1780425006.167936,
+    "ast_hash": "0ef3f66aa4c799d3f28510d4674d2b27",
+    "semantic_hash": "0ef3f66aa4c799d3f28510d4674d2b27"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\README.md": {
+    "mtime": 1780425006.167936,
+    "ast_hash": "3ce275888e249ec349bce5ef90540abc",
+    "semantic_hash": "3ce275888e249ec349bce5ef90540abc"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\RESEARCH.md": {
+    "mtime": 1780425006.168942,
+    "ast_hash": "bdd379ba635c307029589e13275a73c2",
+    "semantic_hash": "bdd379ba635c307029589e13275a73c2"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\REVIEW.md": {
+    "mtime": 1780425006.1699426,
+    "ast_hash": "c91d1f74c457d51fe616059a266d5575",
+    "semantic_hash": "c91d1f74c457d51fe616059a266d5575"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\SPEC.md": {
+    "mtime": 1780425006.1699426,
+    "ast_hash": "8d0a1c2fba7916b9b43f3919cb05e844",
+    "semantic_hash": "8d0a1c2fba7916b9b43f3919cb05e844"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\TASKS.md": {
+    "mtime": 1780425006.1709423,
+    "ast_hash": "055acd60f128c12104f0232c17181e01",
+    "semantic_hash": "055acd60f128c12104f0232c17181e01"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\design-system\\MASTER.md": {
+    "mtime": 1780425006.1879604,
+    "ast_hash": "d00e73add5a93822868d24646c4b5cb1",
+    "semantic_hash": "d00e73add5a93822868d24646c4b5cb1"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\design-system\\_domains.md": {
+    "mtime": 1780425006.1879604,
+    "ast_hash": "f95535e90f228a4d769b2506563e8ff1",
+    "semantic_hash": "f95535e90f228a4d769b2506563e8ff1"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\design-system\\pages\\dropzone.md": {
+    "mtime": 1780425006.1889894,
+    "ast_hash": "77cbd90a7943e2c3349dd3659819efff",
+    "semantic_hash": "77cbd90a7943e2c3349dd3659819efff"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\design-system\\pages\\export-review.md": {
+    "mtime": 1780425006.1889894,
+    "ast_hash": "bbab2281cda99249a50672c9a1da8602",
+    "semantic_hash": "bbab2281cda99249a50672c9a1da8602"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\design-system\\pages\\workspace.md": {
+    "mtime": 1780425006.1899908,
+    "ast_hash": "ae1f2326a3cfd0938ba193f9ca5cf7b2",
+    "semantic_hash": "ae1f2326a3cfd0938ba193f9ca5cf7b2"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\index.html": {
+    "mtime": 1780425006.1899908,
+    "ast_hash": "b92f3a84715c5a338e9d005121b48e9e",
+    "semantic_hash": "b92f3a84715c5a338e9d005121b48e9e"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\01-empty.png": {
+    "mtime": 1780425006.1724467,
+    "ast_hash": "11977653bb8b14e94756bf77865613d1",
+    "semantic_hash": "11977653bb8b14e94756bf77865613d1"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\02-workspace.png": {
+    "mtime": 1780425006.1744504,
+    "ast_hash": "08ae4e7ada241379653a61170a942252",
+    "semantic_hash": "08ae4e7ada241379653a61170a942252"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\03-privacy-zone.png": {
+    "mtime": 1780425006.1764505,
+    "ast_hash": "762af9465c7b3abcb7ca793f4b291245",
+    "semantic_hash": "762af9465c7b3abcb7ca793f4b291245"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\04-cleaned.png": {
+    "mtime": 1780425006.179961,
+    "ast_hash": "4f0217bb8bff45a0760a1f91c42ba8a8",
+    "semantic_hash": "4f0217bb8bff45a0760a1f91c42ba8a8"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\05-simplify.png": {
+    "mtime": 1780425006.181963,
+    "ast_hash": "9e8333ce81ac41f2de180e1b71d890dc",
+    "semantic_hash": "9e8333ce81ac41f2de180e1b71d890dc"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\06-report.png": {
+    "mtime": 1780425006.1829615,
+    "ast_hash": "fe1f261a36c269a0019d0ef494df5d20",
+    "semantic_hash": "fe1f261a36c269a0019d0ef494df5d20"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\07-mobile.png": {
+    "mtime": 1780425006.185961,
+    "ast_hash": "ee9efa0bfa3161aa69a0c35a9390fcf9",
+    "semantic_hash": "ee9efa0bfa3161aa69a0c35a9390fcf9"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\08-live.png": {
+    "mtime": 1780425006.186962,
+    "ast_hash": "963569562a27d572d0678afdba367fed",
+    "semantic_hash": "963569562a27d572d0678afdba367fed"
+  }
+}
