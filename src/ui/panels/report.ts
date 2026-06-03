@@ -162,7 +162,7 @@ export class ReportPanel {
       ${this.row('Moving time', fmtDuration(t.movingTimeS))}
       ${this.row('Elevation gain', t.maxEleM !== null ? fmtElevation(t.elevationGainM, units) : '—')}
       ${this.row('Elevation loss', t.maxEleM !== null ? fmtElevation(t.elevationLossM, units) : '—')}
-      ${this.row('Min / max elev.', t.minEleM !== null && t.maxEleM !== null ? `${fmtElevation(t.minEleM, units)} / ${fmtElevation(t.maxEleM, units)}` : '—')}
+      ${this.row('Min / max elevation', t.minEleM !== null && t.maxEleM !== null ? `${fmtElevation(t.minEleM, units)} / ${fmtElevation(t.maxEleM, units)}` : '—')}
       ${this.row('Avg / max speed', `${fmtSpeed(t.avgSpeedMps, units)} / ${fmtSpeed(t.maxSpeedMps, units)}`)}
       ${this.row('Avg pace', fmtPace(t.avgSpeedMps, units))}
       ${this.row('Points', fmtInt(t.pointCount))}
