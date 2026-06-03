@@ -5,9 +5,9 @@
     "semantic_hash": "84a07d12d89ada8f10ab677598f57190"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\package.json": {
-    "mtime": 1780425006.1909988,
-    "ast_hash": "04319598573eedefa5c81bc776e4c8a2",
-    "semantic_hash": "04319598573eedefa5c81bc776e4c8a2"
+    "mtime": 1780511404.709059,
+    "ast_hash": "517671bcbb5603ff028ad05a4cf6b63c",
+    "semantic_hash": "517671bcbb5603ff028ad05a4cf6b63c"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\playwright.config.ts": {
     "mtime": 1780425006.1919959,
@@ -75,9 +75,9 @@
     "semantic_hash": "7eb4eb26bf5fbf80623810336fd8603f"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\app.ts": {
-    "mtime": 1780425006.2260633,
-    "ast_hash": "cd56b46dc1140511eff112cef9110d70",
-    "semantic_hash": "cd56b46dc1140511eff112cef9110d70"
+    "mtime": 1780511404.7105615,
+    "ast_hash": "39cb4520629c4efd664a5c493d0ff573",
+    "semantic_hash": "39cb4520629c4efd664a5c493d0ff573"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\canvas.ts": {
     "mtime": 1780425006.2260633,
@@ -100,24 +100,24 @@
     "semantic_hash": "629c0fc90848cd8334855416b82ef7f2"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\icons.ts": {
-    "mtime": 1780425006.2270632,
-    "ast_hash": "1af4d2b458277d835b91bc8c1d5fc731",
-    "semantic_hash": "1af4d2b458277d835b91bc8c1d5fc731"
+    "mtime": 1780511404.7115672,
+    "ast_hash": "433e3330fac60a0990c18adbfea0a8e0",
+    "semantic_hash": "433e3330fac60a0990c18adbfea0a8e0"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\controls.ts": {
-    "mtime": 1780425006.2285678,
-    "ast_hash": "51e5aa6067bfbd62d0808c9a9b90f8c8",
-    "semantic_hash": "51e5aa6067bfbd62d0808c9a9b90f8c8"
+    "mtime": 1780511404.7115672,
+    "ast_hash": "39d76edfad654666217c065e5894d156",
+    "semantic_hash": "39d76edfad654666217c065e5894d156"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\dropzone.ts": {
-    "mtime": 1780425006.2285678,
-    "ast_hash": "275b9de26c36dfd16bbf207288c579f2",
-    "semantic_hash": "275b9de26c36dfd16bbf207288c579f2"
+    "mtime": 1780511404.7125661,
+    "ast_hash": "9277d008e22dcb979845f84aa9043280",
+    "semantic_hash": "9277d008e22dcb979845f84aa9043280"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\panels\\report.ts": {
-    "mtime": 1780425006.229573,
-    "ast_hash": "5b134a38f96b831a2b4b9b6fd771821d",
-    "semantic_hash": "5b134a38f96b831a2b4b9b6fd771821d"
+    "mtime": 1780511404.7135663,
+    "ast_hash": "1320f3a335ba091fc7ffe55579087167",
+    "semantic_hash": "1320f3a335ba091fc7ffe55579087167"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\src\\ui\\state.ts": {
     "mtime": 1780425006.229573,
@@ -200,9 +200,9 @@
     "semantic_hash": "05f74034040b852b0f8b806cb0fbb86d"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\CHANGELOG.md": {
-    "mtime": 1780425006.1664307,
-    "ast_hash": "d9331208c58587d07bde77ffe15adbdd",
-    "semantic_hash": "d9331208c58587d07bde77ffe15adbdd"
+    "mtime": 1780511404.7060592,
+    "ast_hash": "070223e563fcf3116818ece4454f5d59",
+    "semantic_hash": "070223e563fcf3116818ece4454f5d59"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\DESIGN_NOTES.md": {
     "mtime": 1780425006.167936,
@@ -260,9 +260,9 @@
     "semantic_hash": "ae1f2326a3cfd0938ba193f9ca5cf7b2"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\index.html": {
-    "mtime": 1780425006.1899908,
-    "ast_hash": "b92f3a84715c5a338e9d005121b48e9e",
-    "semantic_hash": "b92f3a84715c5a338e9d005121b48e9e"
+    "mtime": 1780511404.7070584,
+    "ast_hash": "d45defe01a962ae794344b8f9cf7e90c",
+    "semantic_hash": "d45defe01a962ae794344b8f9cf7e90c"
   },
   "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\assets\\screenshots\\01-empty.png": {
     "mtime": 1780425006.1724467,
@@ -303,5 +303,25 @@
     "mtime": 1780425006.186962,
     "ast_hash": "963569562a27d572d0678afdba367fed",
     "semantic_hash": "963569562a27d572d0678afdba367fed"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\.claude\\settings.json": {
+    "mtime": 1780425375.62765,
+    "ast_hash": "5d6ecd96cf065b16e8bb9fbf5d7d8f0d",
+    "semantic_hash": "5d6ecd96cf065b16e8bb9fbf5d7d8f0d"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\CLAUDE.md": {
+    "mtime": 1780425375.6251383,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\POLISH_LOG.md": {
+    "mtime": 1780511404.7060592,
+    "ast_hash": "84f456ef3a0493cebd3f600d8145e906",
+    "semantic_hash": "84f456ef3a0493cebd3f600d8145e906"
+  },
+  "C:\\Users\\user\\Documents\\Claude\\mission-control\\state\\graphs\\_product_clones\\gpx-privacy-cleaner\\public\\favicon.svg": {
+    "mtime": 1780511404.709059,
+    "ast_hash": "bcf4d53e78a9e2b9392058ce87a96229",
+    "semantic_hash": "bcf4d53e78a9e2b9392058ce87a96229"
   }
 }
