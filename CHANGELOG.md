@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] — 2026-06-03
+
+Plain-language polish for the cleaning controls — no change to how cleaning works.
+
+### Changed
+- The **Coordinate precision** control now explains in plain words that *fewer
+  decimal places blur more*, so you can tell which way to drag without knowing what
+  "decimal places" means.
+- The **Simplify** control now explains that *a bigger tolerance removes more
+  points*, so the "Tolerance" slider's effect is obvious before you touch it.
+- The statistics panel spells out **"Min / max elevation"** in full (was
+  "Min / max elev."), matching the "Elevation gain" / "Elevation loss" rows above it.
+
 ## [1.0.1] — 2026-06-02
 
 Usability polish and accessibility fixes — no change to how cleaning works.

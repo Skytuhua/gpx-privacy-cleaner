@@ -10,6 +10,58 @@ features, no behaviour changes, no rewrites, no new hosting.
 
 ---
 
+## 2026-06-03 — Polish run #2 (v1.0.1 → v1.0.2)
+
+A delta-only pass (per the "audit only what's left" rule): the start screen and
+report were already polished in run #1, so this run started from run #1's
+"Left for a future run" list and a fresh first-timer audit of the **cleaning
+controls** — the one place a normal person still meets developer jargon. Parallel
+reviewer subagents (start-screen lens + workspace-copy lens) converged, and the
+diff (display strings only) was adversarially checked for behaviour change. Found
+two genuine jargon snags and one inconsistency; fixed all three.
+
+### Plain-language for the controls (docs / copy)
+- **Coordinate precision** now adds "Fewer decimal places blur more." to its help
+  line (`src/ui/panels/controls.ts`). The slider is labelled "Decimal places" and a
+  non-coder had no way to know which direction means *more* privacy. Pure static
+  copy; the live "4 dp · ≈ 11 m" readout is unchanged.
+- **Simplify** now adds "A bigger tolerance removes more points."
+  (`src/ui/panels/controls.ts`). "Tolerance" is geometry jargon; this explains its
+  effect in plain words right where it's used — the same explain-in-place pattern
+  run #1 used for "Crop ends / Cut all". No behaviour change.
+- **Statistics** label spelled out: "Min / max elev." → **"Min / max elevation"**
+  (`src/ui/panels/report.ts`), matching the "Elevation gain" / "Elevation loss"
+  rows directly above it. Verified it still fits on one line in the right rail.
+
+### Deliberately NOT done this run
+- **The "How it works in 3 steps" strip** (a run #1 idea) was evaluated and
+  **skipped**: the start screen already has a headline, a one-line subhead, the
+  "Where do I get my .gpx file?" help, and the "100% offline" / "What it removes"
+  cards. A reviewer pass judged a step strip redundant clutter rather than help.
+- **Sensible defaults** remain untouched — still a behaviour change, out of scope
+  (see run #1's note).
+
+### Verification
+- `tsc --noEmit`, `npm test` (113/113), `npm run build` (incl. the zero-network
+  guard) all pass; the two changed files are Prettier- and ESLint-clean.
+- Drove the real app in Chromium (Playwright): loaded the sample, expanded the
+  Coordinate precision and Simplify sections (new help text renders correctly), and
+  confirmed the stats panel shows "Min / max elevation" on a single line — **zero
+  console errors** across empty, workspace and report states.
+
+### Left for a future run
+- The **Trim** sliders ("Start point" / "End point") are clear once you drag them
+  (the live "Keeping points 0–100 (100 of 500)" line explains it), but a non-coder
+  doesn't know up front that the numbers are point positions. A tiny hint could
+  help — left as a low-priority, judgement-call item rather than churn now.
+- The dropzone's "you can load several at once" doesn't say whether multiple files
+  merge or stay separate (they stay separate unless you turn on Merge). A one-line
+  clarifier is possible but risks cluttering the start screen — deferred.
+- Pre-existing `npm run lint` Prettier warnings in generated/docs files
+  (`graphify-out/*`, etc.) are still left alone as machine-generated noise.
+
+---
+
 ## 2026-06-02 — Polish run #1 (v1.0.0 → v1.0.1)
 
 The product shipped in excellent shape: clear README first line, friendly empty
