@@ -100,7 +100,7 @@ export class ControlsPanel {
         'fuzz',
         'crosshair',
         'Coordinate precision',
-        `<p class="text-xs text-fg-muted">Round coordinates to blur exact positions. Off keeps full precision.</p>
+        `<p class="text-xs text-fg-muted">Round coordinates to blur exact positions. Fewer decimal places blur more. Off keeps full precision.</p>
          ${toggle('fuzz-on', 'Reduce precision')}
          <label data-ref="fuzz-body" class="space-y-1 hidden block">
            <span class="label flex justify-between"><span>Decimal places</span><span data-ref="fuzz-res" class="text-fg-muted"></span></span>
@@ -125,7 +125,7 @@ export class ControlsPanel {
         'simplify',
         'minimize',
         'Simplify',
-        `<p class="text-xs text-fg-muted">Reduce the number of points to shrink the file.</p>
+        `<p class="text-xs text-fg-muted">Reduce the number of points to shrink the file. A bigger tolerance removes more points.</p>
          ${toggle('simp-on', 'Simplify geometry')}
          <div data-ref="simp-body" class="space-y-1 hidden">
            <label class="space-y-1 block">
