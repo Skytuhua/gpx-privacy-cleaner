@@ -112,7 +112,7 @@ export class ControlsPanel {
         'trim',
         'scissors',
         'Trim',
-        `<p class="text-xs text-fg-muted">Drop points from the start and end of the track.</p>
+        `<p class="text-xs text-fg-muted">Use the sliders to choose the first and last point to keep.</p>
          ${toggle('trim-on', 'Trim range')}
          <div data-ref="trim-body" class="space-y-2 hidden">
            <label class="space-y-1 block"><span class="label">Start point</span><input data-ref="trim-start" type="range" min="0" step="1" class="w-full accent-accent" /></label>
