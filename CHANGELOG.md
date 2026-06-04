@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+Small clarity polish for the Trim control — no change to how cleaning works.
+
+### Changed
+- The **Trim** control now explains that its sliders choose the first and last
+  point to keep, so the point-number range is clearer before you drag anything.
+
 ## [1.0.2] — 2026-06-03
 
 Plain-language polish for the cleaning controls — no change to how cleaning works.
