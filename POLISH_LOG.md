@@ -10,6 +10,59 @@ features, no behaviour changes, no rewrites, no new hosting.
 
 ---
 
+## 2026-06-04 — Polish run #3 (post-v1.0.2)
+
+A delta-only pass, starting from run #2's "Left for a future run" list. The app's
+README, start screen, privacy-zone copy, coordinate precision, simplify copy,
+report wording and basic accessibility had already been polished, so this pass
+looked only at the remaining low-risk candidates: the **Trim** slider wording and
+the start-screen multi-file hint.
+
+Parallel reviewer subagents split on whether to make any change, which was useful:
+the churn-control lens recommended doing nothing, while the plain-copy lens and an
+adversarial verifier agreed that one Trim helper sentence was real, low-risk, and
+behaviour-neutral. The multi-file dropzone clarifier was rejected by the
+adversarial verifier as pre-action complexity that would clutter an already clear
+start screen.
+
+### Plain-language for Trim (docs / copy)
+- **Trim** now says **"Use the sliders to choose the first and last point to keep."**
+  (`src/ui/panels/controls.ts`). Previously it said "Drop points from the start and
+  end of the track." That was accurate, but it did not explain that the two sliders
+  define the kept point range before a user drags them. This is static helper copy
+  only; the `trimRange` state, inclusive keep-range behaviour, slider labels and
+  live "Keeping points ..." readout are unchanged.
+
+### Deliberately NOT done this run
+- **Dropzone multi-file clarification** was skipped. One reviewer suggested
+  changing "you can load several at once" to explain that files stay separate
+  unless Merge is enabled, but the adversarial verifier judged that as a later-stage
+  detail that would add clutter before the user has loaded anything.
+- **Sensible defaults** remain untouched because changing default removals would
+  change export output, which is outside this routine's low-risk copy/a11y scope.
+- **Generated/docs lint noise** remains untouched for the same reason as prior runs:
+  it is pre-existing machine-generated churn, not user-facing friction.
+
+### Verification
+- Confirmed by GitHub diff that the code change is exactly one display string in
+  `src/ui/panels/controls.ts` and that the commit author/committer is `Skytuhua`.
+- No automated CI statuses are attached to the commit, and this environment's local
+  shell is blocked, so `tsc --noEmit`, `npm test`, `npm run build`, `npm run lint`
+  and browser screenshots could not be run during this pass. The change was kept to
+  static UI copy specifically because full local verification was unavailable.
+- The GitHub connector did not expose a release-creation tool, so no new GitHub
+  Release was cut in this run. The change is recorded under `CHANGELOG.md`'s
+  `Unreleased` section instead of pretending a tag exists.
+
+### Left for a future run
+- When a writable/local build environment or release-capable GitHub tool is
+  available, run the full verification suite and cut the next patch release from the
+  `Unreleased` changelog entry.
+- Revisit the multi-file wording only if first-time user testing shows people expect
+  files to auto-merge from the start screen; otherwise keep the start screen clean.
+
+---
+
 ## 2026-06-03 — Polish run #2 (v1.0.1 → v1.0.2)
 
 A delta-only pass (per the "audit only what's left" rule): the start screen and
